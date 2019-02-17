@@ -1,0 +1,22 @@
+{
+  "name": "masomenos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sudo node index.js",
+    "test": "sudo node test.js"
+  },
+  "dependencies": {
+    "async": "latest",
+    "bluebird": "^3.5.1",
+    "dmx": "0.0.7",
+    "express": "latest",
+    "http": "latest",
+    "lodash": "^4.17.10",
+    "serialport": "^6.2.0",
+    "socket.io": "1.7.4"
+  },
+  "author": "Benjamin Michel",
+  "license": "ISC"
+}

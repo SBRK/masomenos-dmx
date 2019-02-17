@@ -1,0 +1,169 @@
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: black;
+}
+.channel {
+	width: 804px;
+	height: 46px;
+}
+
+.note, select.preset, .saveButton, .ccSelect {
+	display: block;
+	float: left;
+	width: 40px;
+	height: 60px;
+	margin: 3px;
+	position: relative;
+	line-height: 40px;
+	text-align: center;
+}
+
+.note {
+	background: #000000;
+}
+
+.note .dmx-note-address {
+  height: 15px;
+  line-height: 15px;
+  font-size: 12px;
+  width: 100%;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+}
+
+.note .dmx-preset {
+  width: 100%;
+  border: 0;
+  font-size: 10px;
+}
+
+.note .dmx-note-address select {
+  width: 100%;
+  border: 0;
+  font-size: 10px;
+}
+
+.saveButton {
+	cursor: pointer;
+	border: 1px solid white;
+	border-radius: 5px;
+	margin: 2px;
+}
+
+.ccSelect {
+	font-size: 10px;
+	line-height: 15px;
+}
+
+.note .jscolor {
+	display: block;
+	position: absolute;
+	width: 38px;
+	height: 8px;
+	bottom: 0;
+	left: 0;
+	color: transparent !important;
+	margin: 0;
+	padding: 0;
+	border: 1px white solid;
+	cursor: pointer;
+}
+
+#audio {
+	width: 100%;
+	display: none;
+}
+
+#matrix, #connected, #not-connected, #preset, #save-preset {
+	width: 644px;
+	margin: 20px auto;
+		position: relative;
+		display: block;
+		color: white;
+		font-family: Arial;
+		text-align: center;
+}
+
+#matrix {
+	border: 1px solid #333;
+	opacity: 0.15;
+	pointer-events: none;
+}
+
+#matrix.connected {
+	opacity: 1.0;
+	pointer-events: all;
+}
+
+#save-preset {
+	cursor: pointer;
+
+	border: white 1px solid;
+	height: 30px;
+	line-height: 30px;
+	width: 200px;
+}
+
+#preset {
+	width: 200px;
+	color: black;
+}
+
+#connected {
+	display: none;
+	color: green;
+	pointer-events: none;
+}
+
+#autovolume {
+	cursor: pointer;
+	color: white;
+}
+
+#autovolume-on {
+	display: inline;
+	color: green;
+}
+
+#autovolume-off {
+	display: none;
+	color: #444;
+}
+
+#not-connected, #parsing {
+	color: orange;
+	pointer-events: none;
+}
+
+
+#dmxEditor {
+	width: 300px;
+	margin: 0 auto;
+	color: white;
+	font-family: Arial;
+}
+
+.dmxEditorSelect {
+	width: 100%;
+}
+
+.dmxEditorValues label {
+	width: 100px;
+	display: inline-block;
+}
+
+.dmxEditorValues select, .dmxEditorValues input {
+	width: 195px;
+	display: inline-block;
+	border: 0;
+}
+
+.dmxEditorSave {
+	width: 100%;
+	text-align: center;
+	border: 1px solid white;
+	cursor: pointer;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "dsmi",
+  "version": "0.1.0",
+  "description": "DSMI Client library for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SBRK/dsmi-node.git"
+  },
+  "keywords": [
+    "dsmi",
+    "midi"
+  ],
+  "author": "Benjamin Michel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SBRK/dsmi-node/issues"
+  },
+  "homepage": "https://github.com/SBRK/dsmi-node#readme"
+}

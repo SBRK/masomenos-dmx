@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/remote.css">
+  </head>
+  <body>
+    <div id="connected">Connected</div>
+    <div id="not-connected">Connecting...</div>
+    <div id="matrix"></div>
+    <div id="dmxEditor">
+      <select id="dmxEditorSelect" class="dmxEditorSelect" onchange="dmxEditorSelectChange()">
+      </select>
+      <br/>
+      <br/>
+      <div class="dmxEditorValues">
+
+        <label for="name">
+          Name
+        </label>
+        <input name="name" id="dmxEditorName" type="text" onchange="dmxNameChange()"/>
+
+        <br/>
+        <br/>
+
+        <label for="size">
+          Size
+        </label>
+        <select name="size" id="dmxEditorSize" onchange="dmxSizeChange()">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+        </select>
+
+        <br/>
+        <br/>
+
+        <label for="intensity">
+          Dimmer
+        </label>
+        <select name="intensity" id="dmxEditorIntensity" onchange="dmxIntensityChange()">
+          <option value=""></option>
+          <option value="0">1</option>
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+          <option value="4">5</option>
+          <option value="5">6</option>
+          <option value="6">7</option>
+          <option value="7">8</option>
+          <option value="8">9</option>
+          <option value="9">10</option>
+          <option value="10">11</option>
+          <option value="11">12</option>
+          <option value="12">13</option>
+          <option value="13">14</option>
+          <option value="14">15</option>
+        </select>
+
+        <br/>
+        <br/>
+
+        <label for="r">
+          Red
+        </label>
+        <select name="r" id="dmxEditorR" onchange="dmxRChange()">
+          <option value=""></option>
+          <option value="0">1</option>
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+          <option value="4">5</option>
+          <option value="5">6</option>
+          <option value="6">7</option>
+          <option value="7">8</option>
+          <option value="8">9</option>
+          <option value="9">10</option>
+          <option value="10">11</option>
+          <option value="11">12</option>
+          <option value="12">13</option>
+          <option value="13">14</option>
+          <option value="14">15</option>
+        </select>
+
+  <br/>
+
+        <label for="g">
+          Green
+        </label>
+        <select name="g" id="dmxEditorG" onchange="dmxGChange()">
+          <option value=""></option>
+          <option value="0">1</option>
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+          <option value="4">5</option>
+          <option value="5">6</option>
+          <option value="6">7</option>
+          <option value="7">8</option>
+          <option value="8">9</option>
+          <option value="9">10</option>
+          <option value="10">11</option>
+          <option value="11">12</option>
+          <option value="12">13</option>
+          <option value="13">14</option>
+          <option value="14">15</option>
+        </select>
+
+  <br/>
+
+        <label for="b">
+          Blue
+        </label>
+        <select name="b" id="dmxEditorB" onchange="dmxBChange()">
+          <option value=""></option>
+          <option value="0">1</option>
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+          <option value="4">5</option>
+          <option value="5">6</option>
+          <option value="6">7</option>
+          <option value="7">8</option>
+          <option value="8">9</option>
+          <option value="9">10</option>
+          <option value="10">11</option>
+          <option value="11">12</option>
+          <option value="12">13</option>
+          <option value="13">14</option>
+          <option value="14">15</option>
+        </select>
+
+        <br/>
+        <br/>
+
+        <label for="amber">
+          Ambre
+        </label>
+        <select name="amber" id="dmxEditorAmber" onchange="dmxAmberChange()">
+          <option value=""></option>
+          <option value="0">1</option>
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+          <option value="4">5</option>
+          <option value="5">6</option>
+          <option value="6">7</option>
+          <option value="7">8</option>
+          <option value="8">9</option>
+          <option value="9">10</option>
+          <option value="10">11</option>
+          <option value="11">12</option>
+          <option value="12">13</option>
+          <option value="13">14</option>
+          <option value="14">15</option>
+        </select>
+
+        <br/>
+
+        <label for="uv">
+          UV
+        </label>
+        <select name="uv" id="dmxEditorUv" onchange="dmxUVChange()">
+          <option value=""></option>
+          <option value="0">1</option>
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+          <option value="4">5</option>
+          <option value="5">6</option>
+          <option value="6">7</option>
+          <option value="7">8</option>
+          <option value="8">9</option>
+          <option value="9">10</option>
+          <option value="10">11</option>
+          <option value="11">12</option>
+          <option value="12">13</option>
+          <option value="13">14</option>
+          <option value="14">15</option>
+        </select>
+
+        <br/>
+        <br/>
+
+        <label for="white">
+          White
+        </label>
+        <select name="white" id="dmxEditorWhite" onchange="dmxWhiteChange()">
+          <option value=""></option>
+          <option value="0">1</option>
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+          <option value="4">5</option>
+          <option value="5">6</option>
+          <option value="6">7</option>
+          <option value="7">8</option>
+          <option value="8">9</option>
+          <option value="9">10</option>
+          <option value="10">11</option>
+          <option value="11">12</option>
+          <option value="12">13</option>
+          <option value="13">14</option>
+          <option value="14">15</option>
+        </select>
+
+  <br/>
+  <br/>
+  <div class="dmxEditorSave" onclick="dmxSavePreset()">
+    Sauvegarder Preset DMX
+  </div>
+      </div>
+    </div>
+    <script src="js/socket.io-1.3.7.js"></script>
+    <script src="js/remote/io-handler.js"></script>
+    <script src="js/remote/colors.js"></script>
+    <script src="js/remote/dom-helper.js"></script>
+    <script src="js/remote/jscolor.js"></script>
+    <script>
+      initSocket()
+
+      nb = 0;
+
+      var currentColors = [];
+
+      function resetAll(colors)
+      {
+
+        var getColor = function(x, y)
+        {
+          if (colors === undefined)
+            return 0;
+
+          return colors[x][y];
+        }
+
+        for (var x = 0; x < 12; x++)
+          for (var y = 0; y < 5; y++)
+            setColor(y, x, getColor(x, y));
+      }
+
+      function getNote(channel, note)
+      {
+        channel += 1;
+
+        var channelEl = document.getElementsByClassName("channel" + channel)[0];
+
+        for(var i = 0; i < channelEl.children.length; ++i)
+        {
+          var child = channelEl.children[i];
+          if (child.className.indexOf("note" + (note + 1)) != -1)
+            return child;
+        }
+
+        return null;
+      }
+
+      function getNotePalette(channel, note)
+      {
+        channel += 1;
+
+        var channelEl = document.getElementsByClassName("channel" + channel)[0];
+
+        if (!channelEl)
+          return null;
+
+        for(var i = 0; i < channelEl.children.length; ++i)
+        {
+          var child = channelEl.children[i];
+          if (child.className.indexOf("note" + (note + 1)) != -1) {
+            return child.children[2];
+          }
+        }
+
+        return null;
+      }
+
+      function setColor(channel, note, color)
+      {
+        var el = getNote(channel, note);
+
+        color = color & 0x00FFFFFF;
+
+        if (el)
+        {
+          color = color.toString(16);
+          while(color.length < 6)
+            color = "0" + color;
+
+          el.style.background = "#" + color;
+        }
+      }
+
+      function setPaletteColor(channel, note, color, palette, dmxPreset)
+      {
+        var el = getNotePalette(channel, note);
+
+        color = color & 0x00FFFFFF;
+
+        if (el)
+        {
+          color = color.toString(16);
+          while(color.length < 6)
+            color = "0" + color;
+
+          if (el.jscolor)
+            el.jscolor.fromString(color);
+        }
+
+        var select = document.getElementById('preset' + channel);
+        var dmxPresetSelect = document.getElementById(`dmx-preset-${channel}-${note}`)
+
+        if (select)
+          select.value = palette;
+        if (dmxPresetSelect)
+          dmxPresetSelect.value = dmxPreset;
+      }
+
+      function setDmxPreset(channel, note, dmxPreset)
+      {
+        var dmxPresetSelect = document.getElementById(`dmx-preset-${channel}-${note}`)
+
+        if (dmxPresetSelect)
+          dmxPresetSelect.value = dmxPreset;
+      }
+
+      function setDmxAddress(channel, note, address)
+      {
+        console.log('setDmxAddress', arguments)
+
+        var dmxAddressSelect = document.getElementById(`dmx-address-${channel}-${note}`)
+
+        if (dmxAddressSelect)
+          dmxAddressSelect.value = address;
+      }
+
+      function setDmxCcs(channel, values)
+      {
+        var dmxWhite = document.getElementById(`dmx-cc-${channel}-white`)
+        var dmxAmber = document.getElementById(`dmx-cc-${channel}-amber`)
+        var dmxUv = document.getElementById(`dmx-cc-${channel}-uv`)
+
+        if (dmxWhite && values['white'])
+          dmxWhite.value = values['white'];
+
+        if (dmxAmber && values['amber'])
+          dmxAmber.value = values['amber'];
+
+        if (dmxUv && values['uv'])
+          dmxUv.value = values['uv'];
+      }
+
+      function updateColor(jscolor, channel, note)
+      {
+        var r = Math.round(jscolor.rgb[0]);
+        var g = Math.round(jscolor.rgb[1]);
+        var b = Math.round(jscolor.rgb[2]);
+
+        var hsl = rgbToHsl(r, g, b);
+
+        IoHandler.sendMessage({
+          type: 'paletteColor',
+          channel: channel,
+          note: note,
+          color: hsl
+        });
+      }
+
+      function copyCurrentColors()
+      {
+        var colors = [];
+
+        for (var x = 0; x < 12; x++)
+        {
+          colors[x] = [];
+
+          for (var y = 0; y < 5; y++)
+            colors[x][y] = currentColors[x][y];
+        }
+
+        return colors;
+      }
+
+      function sendSavePreset(channel)
+      {
+        IoHandler.sendMessage({
+          type: 'savePreset',
+          channel: channel
+        });
+      }
+
+      function presetChange(channel)
+      {
+        var el = document.getElementById('preset' + channel);
+
+        value = parseInt(el.value);
+
+        sendPresetChange(channel, value);
+      }
+
+      function dmxPresetChange(channel, note)
+      {
+        var el = document.getElementById(`dmx-preset-${channel}-${note}`);
+
+        value = parseInt(el.value);
+
+        sendDmxPresetChange(channel, note, value);
+      }
+
+      function dmxAddressChange(channel, note)
+      {
+        var el = document.getElementById(`dmx-address-${channel}-${note}`);
+
+        value = parseInt(el.value);
+
+        sendDmxAddressChange(channel, note, value);
+      }
+
+      function dmxCCChange(channel, param)
+      {
+        var el = document.getElementById(`dmx-cc-${channel}-${param}`);
+
+        value = parseInt(el.value);
+
+        sendDmxCCChange(channel, param, value);
+      }
+
+      function sendDmxPresetChange(channel, note,  dmxPreset)
+      {
+        IoHandler.sendMessage({
+          type: 'changeDmxPreset',
+          channel,
+          note,
+          dmxPreset,
+        });
+      }
+
+      function sendDmxAddressChange(channel, note, address)
+      {
+        IoHandler.sendMessage({
+          type: 'changeDmxAddress',
+          channel,
+          note,
+          address,
+        });
+      }
+
+      function sendDmxCCChange(channel, value, cc)
+      {
+        IoHandler.sendMessage({
+          type: 'changeDmxCC',
+          channel,
+          value,
+          cc,
+        });
+      }
+
+      function sendPresetChange(channel, preset)
+      {
+        IoHandler.sendMessage({
+          type: 'changePreset',
+          channel: channel,
+          preset: preset
+        });
+      }
+    </script>
+  </body>
+</html>

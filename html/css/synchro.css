@@ -1,0 +1,57 @@
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: black;
+}
+.channel {
+	width: 552px;
+}
+
+.note {
+	display: block;
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin: 3px;
+	background: #000000;
+}
+
+#audio {
+	width: 100%;
+	display: none;
+}
+
+.matrix, #connected, #not-connected {
+	width: 552px;
+	margin: 20px auto;
+		position: relative;
+		display: block;
+		color: white;
+		font-family: Arial;
+		text-align: center;
+}
+
+#connected {
+	display: none;
+	color: green;
+}
+
+#autovolume {
+	cursor: pointer;
+	color: white;
+}
+
+#autovolume-on {
+	display: inline;
+	color: green;
+}
+
+#autovolume-off {
+	display: none;
+	color: #444;
+}
+
+#not-connected, #parsing {
+	color: orange;
+}
