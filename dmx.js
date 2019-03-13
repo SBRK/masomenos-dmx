@@ -18,15 +18,16 @@ class DmxUniverse {
         return null
       }
 
-      const port = _.find(list, { manufacturer: 'FTDI' })
+      const manufacturers = ['FTDI', 'ENTTEC']
 
-      console.log(1)
+      const port = _.find(list, p => _.includes(manufacturers, p.manufacturer))
 
       const dmx = new DMX()
 
-      this.universe = dmx.addUniverse('masomenos', 'enttec-usb-dmx-pro', port.comName)
-
-      this.reset()
+      if (port) {
+        this.universe = dmx.addUniverse('masomenos', 'enttec-usb-dmx-pro', port.comName)
+        this.reset()
+      }
 
       return this
     } catch (err) {
@@ -40,7 +41,7 @@ class DmxUniverse {
   	if (!this.universe) {
   	  return
   	}
-  	
+
     const cleared = {}
     _.times(512, n => cleared[n] = 0)
 

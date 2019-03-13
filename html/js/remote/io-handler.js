@@ -5,8 +5,10 @@ IoHandler = {
 	onmessage: function(data){console.log(data);}
 };
 
+let socket
+
 function initSocket() {
-  var socket = io('http://' + location.hostname + ':3333');
+  socket = io('http://' + location.hostname + ':3333');
 
   socket.on('connect', function ()
   {
