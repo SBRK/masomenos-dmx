@@ -6,10 +6,12 @@ var _ = require('lodash')
 var child;
 
 var io = require('socket.io')(3333);
+
 //var SerialPort = require('serialport').SerialPort;
 
 
 var DMX = require('./dmx');
+var serial = require('./serial');
 var midiToColor = require('./midiToColor');
 var midiToDmxPreset = require('./midiToDmxPreset');
 var DSMI = require('./dsmi/index');
@@ -268,6 +270,7 @@ function sendColor(channel, note, color)
   if (preset) {
     dmx.sendColor({ r, g, b }, preset, address)
   }
+  serial.sendColor(channel, note, color);
 }
 
 function sendCC(channel, cc, value) {
